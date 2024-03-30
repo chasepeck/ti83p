@@ -1,0 +1,56 @@
+ClrHome
+1
+Menu("CHOOSE OPS","+, -",1,"+, -, *, /",2,"+, -, *, /, ²",3)
+Lbl 3:Ans+1
+Lbl 2:Ans+1
+Lbl 1
+min(2*Ans,5)→Θ
+Disp "NUMBER OF"
+Disp "QUESTIONS?"
+Input N
+N→T
+For(I,1,N)
+ClrHome
+randInt(1,Θ)→Z
+randInt(1,20)→A
+If Z<5:Then
+randInt(1,20)→B
+Output(3,5,A)
+Output(3,10,B)
+End
+If Z=1:Then
+A+B→C
+Output(3,8,"+")
+End
+If Z=2:Then
+A-B→C
+Output(3,8,"-")
+End
+If Z=3:Then
+A*B→C
+Output(3,8,"*")
+End
+If Z=4:Then
+If fPart(A/B)≠0:Then
+A*B→C
+Output(3,8,"*")
+Else
+A/B→C
+Output(3,8,"/")
+End
+End
+If Z=5:Then
+A²→C
+Output(3,7,A)
+Output(3,9,"²")
+End
+Input D
+If D≠C:T-1→T
+End
+ClrHome
+Output(3,7,T)
+Output(4,5,"CORRECT")
+Output(5,7,"/")
+Output(5,9,N)
+Pause
+ClrHome

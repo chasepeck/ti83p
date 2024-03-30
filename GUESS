@@ -1,0 +1,19 @@
+Disp "GUESS A NUMBER"
+Disp "FROM 1-100"
+randInt(1,100)→A
+0→C
+While 1
+C+1→C
+Input B
+If A=B:Then
+Disp "I LOVE YOU!"
+"TOOK "
+For(X,1+int(log(C+not(C))),1,-1
+Ans+sub("0123456789",1+int(10fPart(C/10^X)),1
+End
+Disp Ans+" GUESSES"
+Stop
+End
+If A>B:Disp "HIGHER PLEASE"
+If A<B:Disp "LOWER PLEASE"
+End
