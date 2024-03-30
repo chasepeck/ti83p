@@ -22,7 +22,7 @@ ClrHome
 4→S
 0→R
 1→Z
-1→θ
+1→Θ
 Lbl LD
 0→K
 Fill(1,[B])
@@ -48,7 +48,7 @@ Else
 Output(8,2," RIGHT")
 End
 End
-Output(θ,Z,"?")
+Output(Θ,Z,"?")
 While K=0
 getKey→K
 If K=105:Then
@@ -57,15 +57,15 @@ If C≤0:Goto SH
 Goto PL
 End
 End
-Output(θ,Z,sub(" *XO",[B](θ,Z),1))
+Output(Θ,Z,sub(" *XO",[B](Θ,Z),1))
 If K=24
 max(Z-1,1)→Z
 If K=25
-max(θ-1,1)→θ
+max(Θ-1,1)→Θ
 If K=26
 min(Z+1,16-(S-1)*R)→Z
 If K=34
-min(θ+1,8-(S-1)*abs(R-1))→θ
+min(Θ+1,8-(S-1)*abs(R-1))→Θ
 If K=21
 abs(R-1)→R
 If K=22
@@ -73,7 +73,7 @@ Goto Z
 getKey→K
 End
 Lbl PL
-θ→[A](9-C,1)
+Θ→[A](9-C,1)
 Z→[A](9-C,2)
 If R=0:Then
 S→[A](9-C,3)
@@ -100,7 +100,7 @@ Output(6,2,"ARROWS+ENTER")
 Pause
 ClrHome
 1→Z
-1→θ
+1→Θ
 Fill(1,[B])
 If T=0:Then
 For(X,1,dim(ʟA),3)
@@ -123,10 +123,10 @@ For(Y,1,4)
 [A](Y+4*abs(T-1),3)→H
 [A](Y+4*abs(T-1),4)→W
 For(X,1,max(W,H))
-If [A](Y+4*abs(T-1),1)+min(H-1,X-1)=θ and [A](Y+4*abs(T-1),2)+min(W-1,X-1)=Z:Then
+If [A](Y+4*abs(T-1),1)+min(H-1,X-1)=Θ and [A](Y+4*abs(T-1),2)+min(W-1,X-1)=Z:Then
 1→[A](Y+4*abs(T-1),X+4)
 Output(8,1,"HIT!")
-Output(θ,Z,"X")
+Output(Θ,Z,"X")
 If [A](Y+4*abs(T-1),5)+[A](Y+4*abs(T-1),6)+[A](Y+4*abs(T-1),7)+[A](Y+4*abs(T-1),8)=max(W,H)
 Output(8,6,"SUNK!")
 3→A
@@ -137,17 +137,17 @@ End
 If B≥11:Goto WI
 If T=0:Then
 dim(ʟA)+3→dim(ʟA)
-θ→ʟA(dim(ʟA)-2)
+Θ→ʟA(dim(ʟA)-2)
 Z→ʟA(dim(ʟA))
 Else
 dim(ʟB)+3→dim(ʟB)
-θ→ʟB(dim(ʟB)-2)
+Θ→ʟB(dim(ʟB)-2)
 Z→ʟB(dim(ʟB)-1)
 A→ʟB(dim(ʟB))
 End
 If A=4:Then
 Output(8,1,"MISS.")
-Output(θ,Z,"O")
+Output(Θ,Z,"O")
 End
 Pause
 Goto T2
@@ -171,7 +171,7 @@ DelVar T
 DelVar W
 DelVar X
 DelVar Z
-DelVar θ
+DelVar Θ
 DelVar ʟA
 DelVar ʟB
 DelVar [A]
